@@ -40,3 +40,6 @@ python consumer.py
 ### Prerequisites:
 - Docker and Docker Compose installed.
 - Python and the kafka library installed.
+
+## Commands Cheatsheet:
+[here](https://github.com/neginkheirmand/kafka-getting-started/blob/master/cheatsheet.md)
