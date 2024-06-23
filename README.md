@@ -15,8 +15,19 @@ This repository contains a simple Apache Kafka project demonstrating the setup o
 ```
 docker-compose up -d
 ```
+#### 1.5- create a topic with a preferred number of partitions:
+```
+docker exec -it <kafka_container_id> bash
+kafka-topics --create --topic mytopic --partitions <n> --replication-factor 2 --bootstrap-server localhost:9092
+```
+<n> is the number of partitions you want to be created for the topic "mytopic".
+<kafka_container_id> is the container_id of any of the 2 brokers. You can get this value by using the command:
+```
+docker ps -a
+```
+This step can be skipped since the Kafka Python library already creates a topic of the mentioned name with 1 partition by default when such a topic doesn't exist, still, if you want a specific number of partitions, you can use the previous command.
 
-Run the Producer:
+#### 2- Run the Producer:
 
 ```
 python producer.py
