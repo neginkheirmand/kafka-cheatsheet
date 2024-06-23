@@ -3,7 +3,7 @@ import json
 
 # Create a Kafka consumer instance
 consumer = KafkaConsumer(
-    'testNname1',
+    'mytopic',
     bootstrap_servers=['localhost:29092', 'localhost:39092'],
     auto_offset_reset='earliest',
     enable_auto_commit=True,
