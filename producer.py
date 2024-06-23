@@ -10,7 +10,7 @@ producer = KafkaProducer(
 # Produce some messages
 for i in range(10):
     message = {'key': str(i), 'value': 'my_message_{}'.format(i)}
-    producer.send('my_topic', value=message)
+    producer.send('mytopic', value=message)
     producer.flush()
 
 print("Messages sent!")

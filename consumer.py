@@ -3,11 +3,11 @@ import json
 
 # Create a Kafka consumer instance
 consumer = KafkaConsumer(
-    'my_topic',
+    'mytopic',
     bootstrap_servers=['localhost:29092', 'localhost:39092'],
     auto_offset_reset='earliest',
     enable_auto_commit=True,
-    group_id='my_group',
+    group_id='mygroup',
     value_deserializer=lambda x: json.loads(x.decode('utf-8'))
 )
 
