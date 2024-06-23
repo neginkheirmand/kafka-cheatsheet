@@ -10,7 +10,7 @@ kafka-topics --create --topic test-topic --partitions 3 --replication-factor 2 -
 ```
 --replication-factor indicates that for each of the partitions that belong to the topic "test-topic" (ranging from 0 to 2) we  have 2 replicas. 
 
-![img1](https://github.com/neginkheirmand/kafka-getting-started/blob/master/img1.png?raw=true)
+![img1](https://github.com/neginkheirmand/kafka-getting-started/blob/master/images/img1.png?raw=true)
 
 
 ### List Topics:
@@ -51,6 +51,19 @@ kafka-console-producer --topic <topic_name> --bootstrap-server <broker_list>
 ```
 Example:
 ```
-kafka-console-producer --topic test-topic --bootstrap-server localhost:9092
+kafka-console-producer --topic testTopic --bootstrap-server localhost:9092
 ```
-After running this command, type your messages and press Enter to send each message.
+After running this command, type your messages and press Enter to send each message:
+
+
+![](https://github.com/neginkheirmand/kafka-getting-started/blob/master/images/img2.png?raw=true)
+
+### Consume Messages from a Topic:
+```
+kafka-console-consumer.sh --topic <topic_name> --bootstrap-server <broker_list> --from-beginning
+```
+Example:
+```
+kafka-console-consumer.sh --topic testTopic --bootstrap-server localhost:9092 --from-beginning
+```
+## Kafka Consumer Group Commands
